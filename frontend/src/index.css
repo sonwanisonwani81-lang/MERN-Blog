@@ -1,0 +1,117 @@
+/* ============================================
+   FILE: index.css
+   PURPOSE: Global styles + Tailwind CSS foundation.
+            Contains custom animations, keyframes,
+            color tokens, and base styles used
+            across the entire application.
+   ============================================ */
+
+/* Import Tailwind CSS — gives us all utility classes */
+@import "tailwindcss";
+
+/* --------------------
+   1. CUSTOM THEME (Tailwind v4 @theme)
+   -------------------- */
+/* These extend Tailwind's default theme with our design tokens */
+@theme {
+  /* Animation durations */
+  --animate-duration-fast: 150ms;
+  --animate-duration-normal: 300ms;
+  --animate-duration-slow: 500ms;
+
+  /* Custom animations */
+  --animate-fade-in: fadeIn var(--animate-duration-normal) ease-out forwards;
+  --animate-slide-up: slideUp var(--animate-duration-normal) ease-out forwards;
+  --animate-scale-in: scaleIn var(--animate-duration-normal) ease-out forwards;
+  --animate-slide-down: slideDown var(--animate-duration-normal) ease-out forwards;
+  --animate-shimmer: shimmer 1.5s infinite;
+}
+
+/* --------------------
+   2. CUSTOM KEYFRAMES
+   -------------------- */
+/* Fade in — opacity 0 to 1 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide up — moves up while fading in */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale in — grows from 95% to 100% while fading in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide down — for mobile menu opening */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shimmer — for skeleton loader animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* --------------------
+   3. BASE STYLES
+   -------------------- */
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global body styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* System font stack — fast loading, clean look */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------
+   4. UTILITY CLASSES
+   -------------------- */
+/* Staggered animation delays for lists (used in blog grids) */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Skeleton shimmer gradient (used by skeleton loaders) */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
