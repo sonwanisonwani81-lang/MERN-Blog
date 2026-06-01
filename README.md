@@ -2,9 +2,6 @@
 
 A full-stack blog platform built with **MongoDB, Express.js, React.js, and Node.js** featuring a complete blog approval workflow. Users can create blogs, admin can approve or reject them, and everyone can read and comment on approved content.
 
-> **Live Demo:** [Add deployment link here]  
-> **GitHub Repository:** [Add GitHub repo link here]
-
 ---
 
 ## 📋 Table of Contents
@@ -340,23 +337,6 @@ mern-blog/
 Created → Pending (⏳) → Approved (✅) → Visible Publicly
                        → Rejected (❌) → Private
 ```
-
----
-
-## 👤 Test Credentials
-
-After running `node seed.js`, you can log in with these accounts:
-
-| Role | Name | Email | Password |
-|------|------|-------|----------|
-| **Admin** | Ankita | admin@gmail.com | ankita |
-| User | Ayush | ayush@gmail.com | aayush |
-| User | Monika | monika@gmail.com | monika |
-| User | Ami | ami@gmail.com | ami |
-
-**Admin can access:** Dashboard, Admin Panel (approve/reject blogs)  
-**Users can access:** Dashboard, Create Blog, Comments
-
 ---
 
 ## 🔒 Security
